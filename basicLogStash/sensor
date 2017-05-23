@@ -1,0 +1,30 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          sensor 
+# Required-Start:    $network $syslog $time $named
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: this file starts the SenseHat sensory program
+### END INIT INFO
+
+
+case "$1" in
+	start)
+		echo "Starting Sensor Measurements"
+		/home/gnilk/start_sensor.sh
+		;;
+	stop)
+		echo "Stopping Sensor"
+		killall start_sensor.sh
+		;;
+	*)
+		echo "Usage: /etc/init.d/sensor {start|stop}"
+		exit 1
+		;;
+esac
+
+exit 0
+
+
