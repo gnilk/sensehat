@@ -125,7 +125,7 @@ def main(argv):
 			except ConnectionResetError:
 				log.write("Connection Reset, retrying... {0} of {1}".format(retries, max_retries))
 				retries += 1
-		log.write("Max retries exceeded, bailing out...")
+		log.write("Max apa retries exceeded, bailing out...")
 	except:
 		info = sys.exc_info()
 		t = info[0]
